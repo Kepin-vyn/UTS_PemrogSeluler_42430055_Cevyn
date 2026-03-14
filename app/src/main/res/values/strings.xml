@@ -12,4 +12,5 @@
     <string name="status_sangat_baik">Sangat Baik</string>
     <string name="status_cukup">Cukup</string>
     <string name="status_kurang">Kurang</string>
+    <string name="logo_desc">Logo Universitas</string>
 </resources>
