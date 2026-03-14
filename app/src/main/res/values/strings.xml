@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Aplikasi UTS Pemrograman Seluler</string>
+    <string name="sapaan_dosen">Selamat bertugas, Dosen %1$s</string>
+    <string name="status_kelas">Status Kelas: %1$s</string>
+    <string name="sapaan_dosen_default">Selamat bertugas, Dosen [Nama]</string>
+    <string name="hint_jumlah_mahasiswa">Jumlah Mahasiswa</string>
+    <string name="hint_rata_rata_nilai">Rata-rata Nilai Kelas</string>
+    <string name="btn_proses_data">PROSES DATA</string>
+    <string name="hint_nama_dosen">Nama Dosen</string>
+    <string name="btn_masuk">MASUK</string>
+    <string name="daftar_absen_item">Mahasiswa %1$d: ______ \n</string>
+    <string name="status_sangat_baik">Sangat Baik</string>
+    <string name="status_cukup">Cukup</string>
+    <string name="status_kurang">Kurang</string>
+</resources>

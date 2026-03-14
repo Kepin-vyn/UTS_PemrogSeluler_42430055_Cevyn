@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".PanelGeneratorActivity">
+
+    <!-- TextView untuk Sapaan -->
+    <TextView
+        android:id="@+id/textViewSapaan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sapaan_dosen_default"
+        android:textSize="18sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- EditText untuk Jumlah Mahasiswa -->
+    <!-- Added android:minHeight="48dp" to ensure minimum touch target size -->
+    <EditText
+        android:id="@+id/editTextJumlahMahasiswa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="@string/hint_jumlah_mahasiswa"
+        android:inputType="number"
+        android:autofillHints="none"
+        app:layout_constraintWidth_max="488dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSapaan"
+        android:layout_marginTop="16dp" />
+
+    <!-- EditText untuk Rata-rata Nilai Kelas -->
+    <!-- Added android:minHeight="48dp" to ensure minimum touch target size -->
+    <EditText
+        android:id="@+id/editTextRataRataNilai"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="@string/hint_rata_rata_nilai"
+        android:inputType="numberDecimal"
+        android:autofillHints="none"
+        app:layout_constraintWidth_max="488dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextJumlahMahasiswa"
+        android:layout_marginTop="16dp" />
+
+    <!-- Button untuk Proses Data -->
+    <Button
+        android:id="@+id/btnProsesData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_proses_data"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRataRataNilai" />
+
+    <!-- TextView untuk Menampilkan Status Kelas -->
+    <TextView
+        android:id="@+id/textViewStatusKelas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnProsesData" />
+
+    <!-- TextView untuk Menampilkan Daftar Absen -->
+    <TextView
+        android:id="@+id/textViewDaftarAbsen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewStatusKelas" />
+</androidx.constraintlayout.widget.ConstraintLayout>
