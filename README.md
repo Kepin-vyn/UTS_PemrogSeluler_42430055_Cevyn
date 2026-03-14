@@ -24,9 +24,9 @@ Fitur tambahan yang ada pada aplikasi ini mencakup:
 ### 1. Halaman Login (Responsif)
 | Mode Portrait | Mode Landscape |
 | :---: | :---: |
-| ![Login Portrait](masukkan_link_gambar_portrait_disini.jpg) | ![Login Landscape](masukkan_link_gambar_landscape_disini.jpg) |
+| ![Login Portrait](Login_Portrait.png) | ![Login Landscape](Login_Landscape.png) |
 
 ### 2. Halaman Panel Generator
 | Input Data | Hasil Generate (If-Else & Loop) |
 | :---: | :---: |
-| ![Panel Input](masukkan_link_gambar_input_disini.jpg) | ![Panel Output](masukkan_link_gambar_output_disini.jpg) |
+| ![Panel Input](Panel_Portrait.png) | ![Panel Output](Panel_Landscape.png) |
