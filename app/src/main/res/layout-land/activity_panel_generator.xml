@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Added android:baselineAligned="false" for better performance when using layout weights -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+
+        <!-- Kolom Input dan Button -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewSapaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sapaan_dosen_default"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Added android:maxWidth="488dp" to comply with Material Design recommendations -->
+            <EditText
+                android:id="@+id/editTextJumlahMahasiswa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:maxWidth="488dp"
+                android:hint="@string/hint_jumlah_mahasiswa"
+                android:inputType="number"
+                android:autofillHints="none"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Added android:maxWidth="488dp" to comply with Material Design recommendations -->
+            <EditText
+                android:id="@+id/editTextRataRataNilai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:maxWidth="488dp"
+                android:hint="@string/hint_rata_rata_nilai"
+                android:inputType="numberDecimal"
+                android:autofillHints="none"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btnProsesData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_proses_data"/>
+        </LinearLayout>
+
+        <!-- Kolom Hasil Status dan Daftar Absen -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/textViewStatusKelas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/textViewDaftarAbsen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
