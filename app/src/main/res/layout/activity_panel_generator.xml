@@ -1,87 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".PanelGeneratorActivity">
+    android:padding="16dp">
 
-    <!-- TextView untuk Sapaan -->
-    <TextView
-        android:id="@+id/textViewSapaan"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/sapaan_dosen_default"
-        android:textSize="18sp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center_horizontal">
 
-    <!-- EditText untuk Jumlah Mahasiswa -->
-    <!-- Added android:minHeight="48dp" to ensure minimum touch target size -->
-    <EditText
-        android:id="@+id/editTextJumlahMahasiswa"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="@string/hint_jumlah_mahasiswa"
-        android:inputType="number"
-        android:autofillHints="none"
-        app:layout_constraintWidth_max="488dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewSapaan"
-        android:layout_marginTop="16dp" />
+        <!-- Logo di atas -->
+        <ImageView
+            android:id="@+id/imageViewLogoPanel"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/undiknas_color_1024x1024"
+            android:contentDescription="@string/logo_desc"
+            android:scaleType="fitCenter"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="32dp"/>
 
-    <!-- EditText untuk Rata-rata Nilai Kelas -->
-    <!-- Added android:minHeight="48dp" to ensure minimum touch target size -->
-    <EditText
-        android:id="@+id/editTextRataRataNilai"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:hint="@string/hint_rata_rata_nilai"
-        android:inputType="numberDecimal"
-        android:autofillHints="none"
-        app:layout_constraintWidth_max="488dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextJumlahMahasiswa"
-        android:layout_marginTop="16dp" />
+        <!-- Teks Sapaan -->
+        <TextView
+            android:id="@+id/textViewSapaan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selamat bertugas, Dosen [Nama]"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"/>
 
-    <!-- Button untuk Proses Data -->
-    <Button
-        android:id="@+id/btnProsesData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_proses_data"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRataRataNilai" />
+        <!-- Input Jumlah Mahasiswa -->
+        <EditText
+            android:id="@+id/editTextJumlahMahasiswa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_jumlah_mahasiswa"
+            android:inputType="number"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:maxWidth="400dp"/>
 
-    <!-- TextView untuk Menampilkan Status Kelas -->
-    <TextView
-        android:id="@+id/textViewStatusKelas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="18sp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnProsesData" />
+        <!-- Input Rata-rata Nilai -->
+        <EditText
+            android:id="@+id/editTextRataRataNilai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_rata_rata_nilai"
+            android:inputType="numberDecimal"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp"
+            android:maxWidth="400dp"/>
 
-    <!-- TextView untuk Menampilkan Daftar Absen -->
-    <TextView
-        android:id="@+id/textViewDaftarAbsen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewStatusKelas" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Tombol PROSES DATA (pakai style sama seperti tombol MASUK) -->
+        <Button
+            android:id="@+id/btnProsesData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_proses_data"
+            android:background="@drawable/button_rounded"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Teks Status Kelas -->
+        <TextView
+            android:id="@+id/textViewStatusKelas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Teks Daftar Absen -->
+        <TextView
+            android:id="@+id/textViewDaftarAbsen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginBottom="32dp"/>
+    </LinearLayout>
+</ScrollView>
