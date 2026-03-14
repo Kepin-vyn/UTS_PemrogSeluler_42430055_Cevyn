@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:text="Selamat bertugas, Dosen [Nama]"
             android:textSize="18sp"
+            android:textColor="#000000"
             android:textStyle="bold"
             android:layout_marginBottom="24dp"/>
 
@@ -72,6 +73,7 @@
             android:layout_height="wrap_content"
             android:text=""
             android:textSize="18sp"
+            android:textColor="#000000"
             android:layout_marginBottom="16dp"/>
 
         <!-- Teks Daftar Absen -->
@@ -80,6 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
+            android:textColor="#000000"
             android:layout_marginBottom="32dp"/>
     </LinearLayout>
 </ScrollView>

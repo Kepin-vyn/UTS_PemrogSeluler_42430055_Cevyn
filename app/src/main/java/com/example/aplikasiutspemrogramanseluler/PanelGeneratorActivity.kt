@@ -28,12 +28,12 @@ class PanelGeneratorActivity : AppCompatActivity() {
 
         // Mengambil data dari Intent
         val namaDosen = intent.getStringExtra("NAMA_DOSEN") ?: ""
-
-        // Menampilkan sapaan menggunakan resource string dengan placeholder
         textViewSapaan.text = getString(R.string.sapaan_dosen, namaDosen)
 
+        // Membaca daftar nama artis dari assets/names.txt
+        val daftarNama: List<String> = assets.open("names.txt").bufferedReader().readLines()
+
         btnProsesData.setOnClickListener {
-            // Mendapatkan nilai dari input
             val jumlahMahasiswaStr = editTextJumlahMahasiswa.text.toString()
             val rataRataNilaiStr = editTextRataRataNilai.text.toString()
 
@@ -41,22 +41,19 @@ class PanelGeneratorActivity : AppCompatActivity() {
                 val jumlahMahasiswa = jumlahMahasiswaStr.toIntOrNull() ?: 0
                 val rataRataNilai = rataRataNilaiStr.toDoubleOrNull() ?: 0.0
 
-                // Logika 1: Tentukan status kelas
-                // Menggunakan resource string untuk status agar dapat diterjemahkan
+                // Tentukan status kelas
                 val statusKelas = when {
                     rataRataNilai >= 80 -> getString(R.string.status_sangat_baik)
                     rataRataNilai >= 60 -> getString(R.string.status_cukup)
                     else -> getString(R.string.status_kurang)
                 }
-                // Menampilkan status kelas menggunakan resource string dengan placeholder
                 textViewStatusKelas.text = getString(R.string.status_kelas, statusKelas)
 
-                // Logika 2: Perulangan untuk daftar absen
+                // Loop untuk menampilkan daftar absen dengan nama artis
                 val daftarAbsen = StringBuilder()
                 for (i in 1..jumlahMahasiswa) {
-                    if (i > 100) break // Safety limit
-                    // Menggunakan resource string dengan placeholder untuk item daftar absen
-                    daftarAbsen.append(getString(R.string.daftar_absen_item, i))
+                    val nama = daftarNama[(i - 1) % daftarNama.size] // ulangi jika jumlah > 100
+                    daftarAbsen.append("$i. $nama\n")
                 }
                 textViewDaftarAbsen.text = daftarAbsen.toString()
             }
